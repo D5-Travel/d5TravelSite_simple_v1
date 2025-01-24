@@ -1,0 +1,60 @@
+*{
+    --clr1: #6999ff;
+    --clr2: white;
+    --clr3: rgb(0, 0, 161);
+
+}
+
+
+/* General */
+.roboto-flex-mine {
+    font-family: "Roboto Flex", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+}
+
+.lobster-regular {
+    font-family: "Lobster", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+    background-color: var(--clr1);
+    color: var(--clr2);
+    font-family: "Roboto Flex", serif;
+}
+
+header{
+    display: flex;
+    background-color: var(--clr3);
+    color: var(--clr2);
+    border-bottom-style: solid;
+    padding: 1rem;
+    font-family: "Lobster", serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.link_box{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

@@ -47,14 +47,96 @@ header{
     font-family: "Lobster", serif;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 h1{
     font-size: 4rem;
 }
 
+ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .link_box{
+    display: flex;
+}
+
+.link_ul{
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav_link:hover{
+    cursor: pointer;
+    color: yellow;
+}
+
+.nav_link:active{
+    cursor: pointer;
+    color: var(--clr1);
+}
+
+/* Landing */
+
+.landing_wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 2rem;
+    gap: 1rem;
+    border-style: solid;
+}
+
+.landing_card{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: fit-content;
+}
+
+.landing_title{
+    background-color: var(--clr3);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    gap: 0.5rem;
+    border-style: solid;
+}
+
+.landing_h2{
+    font-weight: 750;
+    font-size: 2.5rem;
+}
+
+.landing_ul{
+    padding: 0rem;
+}
+
+.landing_li{
+    border-style: solid;
+    border-top: none;
+    padding: 0.5rem;
+}
+
+.book_button{
+    width: fit-content;
+    margin-left: 1rem;
+}
+
+.book_button:hover{
+    color: yellow;
+}
+
+.book_button:active{
+    color: var(--clr1);
 }

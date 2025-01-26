@@ -50,7 +50,7 @@ const renderLanding = ()=>{
 
 
 const renderForm = ()=>{
-    const sendEmail = "ben@d5travel.com";
+    const sendEmail = "8fac351969ec5f7aa0ed9f33e1ae7301";
     container.innerHTML = `
     <div class="form_container">
         <div class="booking_title">

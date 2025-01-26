@@ -140,3 +140,52 @@ li{
 .book_button:active{
     color: var(--clr1);
 }
+
+/* Form */
+
+.form_container{
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.booking_title{
+    color: var(--clr1);
+    background-color: var(--clr2);
+    padding: 1rem;
+}
+
+.booking_form{
+    border-style: solid;
+    margin-bottom: 5rem;
+    padding: 1rem;
+}
+
+.form_body{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: scroll;
+}
+
+.form_contact{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-style: solid;
+}
+
+.form_flight{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-style: solid;
+}
+
+.submit_btn{
+    margin-top: 1rem;
+    margin-left: 50%;
+    margin-right: 50%;
+
+}

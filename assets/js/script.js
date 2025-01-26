@@ -26,10 +26,10 @@ const renderLanding = ()=>{
                                 <h4>7.5% off for 2+ passengers</h4>
                             </li>
                         </ul>
-                        <p id="faqLink" class="faq_link">
-                            How does it work?
-                        </p>
                 </div>
+                <p id="landingFaq" class="landing_faq">
+                    How does it work?
+                </p>
                 
             </div>
             
@@ -37,6 +37,15 @@ const renderLanding = ()=>{
                 Let's Go!
             </button>
         </div>`
+    
+    // currentPage = "landing"
+    localStorage.setItem("currentPage", "landing");
+    
+    const bookButton = document.getElementById("bookButton");
+    const landingFaq = document.getElementById("landingFaq");
+    bookButton.addEventListener("click", renderForm);
+    landingFaq.addEventListener("click", renderFaq);
+
 };
 
 
@@ -72,7 +81,7 @@ const renderForm = ()=>{
                     </div>
                 </div>
 
-                <div class="form_flight">
+                <div class="form_contact">
                     <h3>Booking Details</h3>
                     <div class="mb-3">
                         <label for="paxNo" class="form-label">Number of Passengers*</label>
@@ -128,17 +137,73 @@ const renderForm = ()=>{
                     </div> 
                     
                 </div>
+                <div></div>
             </div>
                 
 
             
             
             
-            <button class="submit_btn btn btn-primary btn-lg">Submit</button>
+            <button id="submitButton" class="submit_btn btn btn-primary btn-lg" type="submit">Submit</button>
         </form>
     </div>`
+
+    localStorage.setItem("currentPage", "form");
+
+    const submitButton = document.getElementById("submitButton");
+    submitButton.addEventListener("submit", renderSuccess);
+};
+
+const renderSuccess = ()=>{
+    container.innerHTML = `
+        <div class="success_wrapper">
+            <div class="success_title">
+                <h2>Success!</h2>
+            </div>
+            <div class="success_body">
+                <p>
+                    Thank you for your submission! A travel agent will contct you shortly to move forward with the booking process.
+                </p>
+                <button id="successButton" class="success_btn btn btn-primary btn-lg" type="button">Return</button>
+            </div>
+        </div>
+    `
+    localStorage.setItem("currentPage", "landing");
+
+    const successButton = document.getElementById("successButton");
+    successButton.addEventListener("click", renderLanding);
 }
 
+const renderFaq = ()=>{
+    container.innerHTML = `
+        <h2>Coming soon!</h2>
+    `
+    localStorage.setItem("currentPage", "faq");
+};
 
 
-renderLanding()
+(()=>{
+    titleLink.addEventListener("click", renderLanding);
+    homeLink.addEventListener("click", renderLanding);
+    formLink.addEventListener("click", renderForm);
+    faqLink.addEventListener("click", renderFaq);
+
+
+    // const currentPage = JSON.parse(localStorage.getItem("currentPage"));
+    const currentPage = localStorage.getItem("currentPage");
+    if(currentPage){
+        switch(currentPage){
+            case "landing":
+                renderLanding();
+                break;
+            case "form":
+                renderForm();
+                break;
+            case "faq":
+                renderFaq();
+                break;
+        };
+    } else {
+        renderLanding();
+    };
+})()

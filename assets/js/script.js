@@ -154,30 +154,59 @@ const renderForm = ()=>{
     submitButton.addEventListener("submit", renderSuccess);
 };
 
-const renderSuccess = ()=>{
-    container.innerHTML = `
-        <div class="success_wrapper">
-            <div class="success_title">
-                <h2>Success!</h2>
+const renderFaq = ()=>{
+    const qna = [
+        {
+            question: "How do you get discounts that I can't?",
+            answer: "As a travel agency, D5 Travel has access to resources and industry connections that retail customers don't.  We use those resources to secure discounts on tickets that are not available to the public."
+        },
+        {
+            question: "Is this all kosher?",
+            answer: "Mehadrin min Hamehadrin.  D5 Travel only offers discounts that adhere unambiguously to the policies and terms of service of the airlines we book tickets for."
+        },
+        {
+            question: "Do you use points and miles to book tickets or lower ticket costs?",
+            answer: "No."
+        },
+        {
+            question: "Can you book other accommodations for my trip (hotel, car rental, etc)?",
+            answer: "You can ask in the “Additional Details” section of the form, but it will most likely be a no."
+        },
+        {
+            question: "Why don't other travel agents offer the same discounts?",
+            answer: "The short answer is that they can, but generally don't.  Many other travel agents have access to the exact same resources and connections as D5 Travel.  Most don't consider it to be worthwhile to invest in the time and effort to book tickets, when they can take a higher fee on a bigger, more expensive trip for a larger client. <br><br>At D5 Travel, we prefer to take a smaller cut on quicker, simpler bookings, which allows us to handle a higher volume of clients with more straightforward needs."
+        }
+    ];
+
+    const qnaHTML = qna.map((e)=>{
+        return `
+            <div class="faq_card">
+                <div class="faq_question">
+                    <h4>${e.question}</h4>
+                </div>
+                <div class="faq_answer">
+                    <h5>${e.answer}<h5>
+                </div>
             </div>
-            <div class="success_body">
-                <p>
-                    Thank you for your submission! A travel agent will contct you shortly to move forward with the booking process.
-                </p>
-                <button id="successButton" class="success_btn btn btn-primary btn-lg" type="button">Return</button>
+        `;
+    }).join("\n");
+
+    container.innerHTML = `
+        <div class="faq_wrapper">
+            <div class="faq_title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div id="faqBody" class="faq_body">
+
             </div>
         </div>
     `
-    localStorage.setItem("currentPage", "landing");
 
-    const successButton = document.getElementById("successButton");
-    successButton.addEventListener("click", renderLanding);
-}
+    const faqBody = document.getElementById("faqBody");
 
-const renderFaq = ()=>{
-    container.innerHTML = `
-        <h2>Coming soon!</h2>
-    `
+    faqBody.innerHTML = `${qnaHTML}`;
+
+
     localStorage.setItem("currentPage", "faq");
 };
 

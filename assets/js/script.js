@@ -177,7 +177,7 @@ const renderForm = ()=>{
                                 Your booking will use the information EXACTLY as it is written here.  Please double check that you've entered everything correctly.
                                 <br> If your information is not correct, and D5 needs to contact El Al to fix or change your booking, you will be charged a $40 fee (if it is our error, the will handle it free of charge).</br>
                             </p>
-                            <textarea class="form-control" id="paxDetails" rows="3" required></textarea>
+                            <textarea class="form-control" id="paxDetails" name="paxDetails" rows="3" required></textarea>
                         </div> 
 
                         <div class="radio_box">
@@ -225,18 +225,18 @@ const renderForm = ()=>{
 
                         <div class="mb-3">
                             <label for="additionalDetails" class="form-label">Additional Details</label>
-                            <textarea class="form-control" id="additionalDetails" rows="3"></textarea>
+                            <textarea class="form-control" id="additionalDetails" name="additionalDetails" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3">
                             <p>Payment Method (Check any you have access to)<span style="color: red;">*</span></p>
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck1" name="Zelle" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck1">Zelle (preferred)</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck2" name="Paypal" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck2">Paypal</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck3" name="Venmo" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck3">Venmo</label>
                             <h3 style="color: #e40000; line-weight: 900; margin-top: 1rem;">
                                 If we do not receive payment of proof or payment within 12 hours of confirmation, your booking will be cancelled.
@@ -379,7 +379,7 @@ const renderQuickForm = ()=>{
                                 Your booking will use the information EXACTLY as it is written here.  Please double check that you've entered everything correctly.
                                 <br> If your information is not correct, and D5 needs to contact El Al to fix or change your booking, you will be charged a $40 fee (if it is our error, the will handle it free of charge).</br>
                             </p>
-                            <textarea class="form-control" id="paxDetails" rows="3" required></textarea>
+                            <textarea class="form-control" id="paxDetails" name="paxDetails" rows="3" required></textarea>
                         </div> 
 
                         <div class="softEnd radio_box">
@@ -428,8 +428,8 @@ const renderQuickForm = ()=>{
                         </div>
 
                         <div class="mb-3">
-                            <label for="flightNo" class="form-label">Stopovers (if applicable)</label>
-                            <input type="text" name="flightNo" class="form-control">
+                            <label for="stopovers" class="form-label">Stopovers (if applicable)</label>
+                            <input type="text" name="stopovers" class="form-control">
                         </div>
                         
                         <div class="mb-3">
@@ -449,54 +449,54 @@ const renderQuickForm = ()=>{
 
                         <div class="mb-3">
                             <label for="departArprt" class="form-label">Departing Airport</label>
-                            <input type="text" name="departArprt" class="form-control" placeholder="JFK">
+                            <input type="text" name="departArprt_Rtrn" class="form-control" placeholder="JFK">
                         </div>
                         <div class="mb-3">
                             <label for="arriveArprt" class="form-label">Arrival Airport</label>
-                            <input type="text" name="arriveArprt" class="form-control" placeholder="Ben Gurion">
+                            <input type="text" name="arriveArprt_Rtrn" class="form-control" placeholder="Ben Gurion">
                         </div>
 
                         
                         <div class="mb-3">
                             <label for="departDate" class="form-label">Departure Date</label>
-                            <input type="date" name="departDate">
+                            <input type="date" name="departDate_Rtrn">
                         </div>
 
                         <div class="mb-3">
                             <label for="departTime" class="form-label">Departure Time</label>
-                            <input type="time" name="departTime">
+                            <input type="time" name="departTime_Rtrn">
                         </div>
 
                         <div class="mb-3">
                             <label for="flightNo" class="form-label">Flight Number</label>
-                            <input type="text" name="flightNo" class="form-control">
+                            <input type="text" name="flightNo_Rtrn" class="form-control">
                         </div>
 
                         <div class="mb-3">
-                            <label for="flightNo" class="form-label">Stopovers (if applicable)</label>
-                            <input type="text" name="flightNo" class="form-control">
+                            <label for="stopovers" class="form-label">Stopovers (if applicable)</label>
+                            <input type="text" name="stopovers_Rtrn" class="form-control">
                         </div>
                         
                         <div class="mb-3">
                             <label for="classPreference" class="form-label">Class Preference</label>
-                            <input type="text" name="classPreference" class="form-control" placeholder="Economy, Premium, Business, etc.">
+                            <input type="text" name="classPreference_Rtrn" class="form-control" placeholder="Economy, Premium, Business, etc.">
                         </div>
 
                         <div class="softEnd mb-3">
                             <label for="paxPrice" class="form-label">Price Per Ticket (as it appears on the El Al website, including denomination)</label>
-                            <input type="text" name="paxPrice" class="form-control">
+                            <input type="text" name="paxPrice_Rtrn" class="form-control">
                         </div>
 
                         <h3>Extras</h3>
                         <div class="mb-3">
                             <label for="extras" class="form-label">Extra Charges (extra bags, extra legroom, etc)</label>
                             <p>Most additional charges and upgrades available on the El Al website are covered under the D5 discount.</p>
-                            <textarea class="form-control" id="extras" rows="3"></textarea>
+                            <textarea class="form-control" id="extras" name="extras" rows="3"></textarea>
                         </div>
                         <div class="softEnd mb-3">
                             <label for="additionalDetails" class="form-label">Additional Details</label>
                             <p>Anything not covered by the form that you'd like us to know before booking.</p>
-                            <textarea class="form-control" id="additionalDetails" rows="3"></textarea>
+                            <textarea class="form-control" id="additionalDetails" name="additionalDetails" rows="3"></textarea>
                         </div>
                         
 
@@ -507,13 +507,13 @@ const renderQuickForm = ()=>{
                         </div>
                         <div class="mb-3">
                             <p>Payment Method (Check any you have access to)<span style="color: red;">*</span></p>
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck1" name="Zelle" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck1">Zelle (preferred)</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck2" name="Paypal" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck2">Paypal</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck3" name="Venmo" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btncheck3">Venmo</label>
                             <h3 style="color: #e40000; line-weight: 900; margin-top: 1rem;">
                                 If we do not receive payment of proof or payment within 12 hours of confirmation, your booking will be cancelled.
@@ -635,7 +635,7 @@ const renderContact = ()=>{
                 <div class="form_contact">
                     <h3>Message Body</h3>
                     <div class="mb-3">
-                        <textarea class="form-control" id="contactBody" rows="3" required></textarea>
+                        <textarea class="form-control" id="contactBody" name="contactBody" rows="3" required></textarea>
                     </div>
                 </div>
                 <div></div>
